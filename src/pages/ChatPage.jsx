@@ -17,7 +17,7 @@ const ChatPage = () => {
 
     try {
       const res = await axios.post(
-        "/chat",
+        `${import.meta.env.VITE_BACKEND_URL}/chat`,
         {
           message: userInput,
           persona,
