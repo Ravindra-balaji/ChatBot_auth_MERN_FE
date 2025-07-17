@@ -17,7 +17,7 @@ const ChatPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:2900/api/v1/chat",
+        "/chat",
         {
           message: userInput,
           persona,
