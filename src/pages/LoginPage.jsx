@@ -39,7 +39,7 @@ const LoginPage = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 p-6">
             <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-                <h1 className="text-3xl font-extrabold text-center text-purple-800 mb-6">Welcome Back 👋</h1>
+                <h1 className="text-3xl font-extrabold text-center text-purple-800 mb-6">Welcome!</h1>
 
                 {welcomeBack && (
                     <div className="text-green-600 text-lg font-semibold text-center mb-4">
