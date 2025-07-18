@@ -41,7 +41,7 @@ const Navbar = () => {
         ) : (
           <>
             <button
-              className="py-1 px-2 border-1 border-blue-600 bg-red-500 rounded-md"
+              className="py-1 px-2 border-1 border-blue-600 bg-red-600 rounded-md"
               onClick={handleLogout}
             >
               Logout
