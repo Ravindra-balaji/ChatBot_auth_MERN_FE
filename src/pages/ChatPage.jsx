@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAppContext } from "../contexts/appContext";
 
-const personas = ["friendly", "teacher", "sarcastic", "Doctor"];
+const personas = ["friendly", "teacher", "sarcastical", "Doctor"];
 
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
