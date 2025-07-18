@@ -39,6 +39,7 @@ const LoginPage = () => {
     return (
         <div className="min-h-[100vh] p-4 flex items-center justify-center bg-gray-100">
             <div className="p-6 flex flex-col items-start gap-4 bg-emerald-200 rounded-lg shadow-lg w-full max-w-md">
+                <h1 className="text-2xl font-bold text-center text-emerald-900 w-full">Login to Your Account</h1>
                 {welcomeBack && (
                     <div className="text-green-800 text-xl font-semibold w-full text-center">
                        Welcome Back!
