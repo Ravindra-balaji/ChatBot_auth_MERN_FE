@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-6 flex items-center justify-between bg-amber-200">
+    <div className="p-6 flex items-center justify-between bg-regal-blue">
       <div>Multi-Persona ChatBot</div>
       <div></div>
       <div className="flex gap-4 ">
