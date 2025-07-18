@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router";
 import { useAppContext } from "../contexts/appContext";
 import { axiosInstance } from "../axios/axiosInstance";
 import { ErrorToast, SuccessToast } from "../utils/toastHelper";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const { user = {} } = useAppContext();
@@ -25,7 +26,10 @@ const Navbar = () => {
 
   return (
     <div className="p-6 flex items-center justify-between bg-cyan-500">
-      <div>Multi-Persona ChatBot</div>
+      <div className="flex items-center gap-2">
+        <IoChatbubbleEllipsesOutline className="text-2xl text-white" />
+        <span className="text-white font-semibold">Multi-Persona ChatBot</span>
+      </div>
       <div></div>
       <div className="flex gap-4 ">
         <Link to="/">Home</Link>
