@@ -13,7 +13,7 @@ const AppContextProvider = ({ children }) => {
   const [appLoading, setAppLoading] = useState(true);
   const [user, setUser] = useState({ isAuthenticated: false });
 
-  // 👇 ADD persona state
+
   const [persona, setPersona] = useState("friendly");
 
   const getUserDetails = async () => {
@@ -30,7 +30,6 @@ const AppContextProvider = ({ children }) => {
       }
     } catch (err) {
       console.log("------------------ error otherwise");
-      ErrorToast("Error in user validation", err.message);
     } finally {
       setAppLoading(false);
     }
@@ -44,7 +43,7 @@ const AppContextProvider = ({ children }) => {
     appLoading,
     user,
     persona,
-    setPersona, // 👈 provide setter to components
+    setPersona,
   };
 
   return <AppContext.Provider value={valueObj}>{children}</AppContext.Provider>;
