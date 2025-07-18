@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { axiosInstance } from "../axios/axiosInstance";
 import { ErrorToast, SuccessToast } from "../utils/toastHelper";
 
@@ -37,87 +37,86 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="min-h-[100vh] p-4 flex items-center justify-center bg-gray-100">
-            <div className="p-6 flex flex-col items-start gap-4 bg-emerald-200 rounded-lg shadow-lg w-full max-w-md">
-                <h1 className="text-2xl font-bold text-center text-emerald-900 w-full">Login to Your Account</h1>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 p-6">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+                <h1 className="text-3xl font-extrabold text-center text-purple-800 mb-6">Welcome Back 👋</h1>
+
                 {welcomeBack && (
-                    <div className="text-green-800 text-xl font-semibold w-full text-center">
-                       Welcome Back!
+                    <div className="text-green-600 text-lg font-semibold text-center mb-4">
+                        You're now logged in!
                     </div>
                 )}
 
-                <div className="flex flex-col w-full">
-                    <label className="text-gray-700 mb-1" htmlFor="user-email">
-                        Email:
+                <div className="mb-4">
+                    <label htmlFor="user-email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email
                     </label>
                     <input
                         id="user-email"
                         type="email"
                         name="email"
-                        required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="border border-gray-300 rounded-md py-2 px-3 text-indigo-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        required
                     />
                 </div>
 
-                <div className="flex flex-col w-full">
-                    <label className="text-gray-700 mb-1" htmlFor="user-password">
-                        Password:
+                <div className="mb-6">
+                    <label htmlFor="user-password" className="block text-sm font-medium text-gray-700 mb-1">
+                        Password
                     </label>
                     <input
                         id="user-password"
                         type="password"
                         name="password"
-                        required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="border border-gray-300 rounded-md py-2 px-3 text-indigo-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        required
                     />
                 </div>
 
-                <div className="flex flex-col gap-3 items-center self-stretch mt-4">
-                    <button
-                        type="button"
-                        className="w-full py-2 rounded-lg text-xl bg-green-700 text-white cursor-pointer flex items-center justify-center disabled:opacity-50"
-                        onClick={handleLogin}
-                        disabled={loading}
-                    >
-                        {loading ? (
-                            <span className="flex gap-2 items-center">
-                                <svg
-                                    className="animate-spin h-5 w-5 text-white"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <circle
-                                        className="opacity-25"
-                                        cx="12"
-                                        cy="12"
-                                        r="10"
-                                        stroke="currentColor"
-                                        strokeWidth="4"
-                                        fill="none"
-                                    />
-                                    <path
-                                        className="opacity-75"
-                                        fill="currentColor"
-                                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
-                                    />
-                                </svg>
-                                Logging in...
-                            </span>
-                        ) : (
-                            "Login"
-                        )}
-                    </button>
+                <button
+                    type="button"
+                    className="w-full bg-purple-700 text-white py-2 rounded-lg text-lg font-semibold hover:bg-purple-800 transition-colors disabled:opacity-50 flex justify-center items-center"
+                    onClick={handleLogin}
+                    disabled={loading}
+                >
+                    {loading ? (
+                        <span className="flex items-center gap-2">
+                            <svg
+                                className="animate-spin h-5 w-5 text-white"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    className="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    strokeWidth="4"
+                                    fill="none"
+                                />
+                                <path
+                                    className="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                                />
+                            </svg>
+                            Logging in...
+                        </span>
+                    ) : (
+                        "Login"
+                    )}
+                </button>
 
-                    <p className="text-center text-gray-800">
-                        <span>Don't have an account? </span>
-                        <Link to="/signup" className="text-blue-600 underline">
-                            Signup here
-                        </Link>
-                    </p>
-                </div>
+                <p className="text-center text-sm text-gray-600 mt-4">
+                    Don’t have an account?
+                    <Link to="/signup" className="text-purple-600 hover:underline ml-1">
+                        Signup here
+                    </Link>
+                </p>
             </div>
         </div>
     );
