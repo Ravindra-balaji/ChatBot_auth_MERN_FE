@@ -28,7 +28,7 @@ const Navbar = () => {
       <div>Multi-Persona ChatBot</div>
       <div></div>
       <div className="flex gap-4 ">
-        <Link to="/">Home</Link>
+        <Link to="/" className="py-1 px-2 border-1 border-blue-600 bg-blue-200 rounded-md">Home</Link>
         {!isAuthenticated ? (
           <div className="flex gap-4 items-center">
             <Link to="/login" className="text-blue-500 underline">
@@ -41,7 +41,7 @@ const Navbar = () => {
         ) : (
           <>
             <button
-              className="py-1 px-2 border-1 border-blue-600 bg-blue-200 rounded-md"
+              className="py-1 px-2 border-1 border-blue-600 bg-red-500 rounded-md"
               onClick={handleLogout}
             >
               Logout
